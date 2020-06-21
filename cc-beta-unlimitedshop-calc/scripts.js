@@ -11,8 +11,9 @@ function calc(){
 	res.innerHTML = "";
 
 	var n = max_use(bounties);
+	res.innerHTML += "Total bounties: " + bounties + "<br>";
 	res.innerHTML += "Unused bounties: " + (bounties - n) + "<br>";
-	res.innerHTML += "possible buy plans: <br>";
+	res.innerHTML += "<br>possible buy plans: <br><br>";
 
 	gen_all(n, res);
 }
