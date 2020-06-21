@@ -10,7 +10,7 @@ function calc(){
 
 	res.innerHTML = "";
 
-	if(bounties > 1000000){
+	if(bounties > 100000){
 		res.innerHTML = "Too much bounties!";
 	}else{
 		var n = max_use(bounties);
