@@ -10,12 +10,16 @@ function calc(){
 
 	res.innerHTML = "";
 
-	var n = max_use(bounties);
-	res.innerHTML += "Total bounties: " + bounties + "<br>";
-	res.innerHTML += "Unused bounties: " + (bounties - n) + "<br>";
-	res.innerHTML += "<br>possible buy plans: <br><br>";
+	if(bounties > 1000000){
+		res.innerHTML = "Too much bounties!";
+	}else{
+		var n = max_use(bounties);
+		res.innerHTML += "Total bounties: " + bounties + "<br>";
+		res.innerHTML += "Unused bounties: " + (bounties - n) + "<br>";
+		res.innerHTML += "<br>possible buy plans: <br><br>";
 
-	gen_all(n, res);
+		gen_all(n, res);
+	}
 }
 
 function max_use(bounties){
