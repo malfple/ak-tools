@@ -1,6 +1,6 @@
 items = []
 stages = []
-formula = []
+formulas = []
 stagematrix = []
 
 var btGen = document.getElementById("btGen");
@@ -37,19 +37,17 @@ async function fetchPenguinStats(){
 		// items
 		showmsg("Fetching data from penguin-stats: items");
 		items = await fetchjson("https://penguin-stats.io/PenguinStats/api/v2/items");
-		console.log(items);
 
 		// stages
 		showmsg("Fetching data from penguin-stats: stages");
 		stages = await fetchjson("https://penguin-stats.io/PenguinStats/api/v2/stages");
-		console.log(stages);
 		stagematrix = await fetchjson("https://penguin-stats.io/PenguinStats/api/v2/result/matrix");
+		stagematrix = stagematrix.matrix;
 		console.log(stagematrix);
 
 		// formula
 		showmsg("Fetching data from penguin-stats: formulas");
-		formula = await fetchjson("https://penguin-stats.io/PenguinStats/api/v2/formula");
-		console.log(formula);
+		formulas = await fetchjson("https://penguin-stats.io/PenguinStats/api/v2/formula");
 	}
 }
 
