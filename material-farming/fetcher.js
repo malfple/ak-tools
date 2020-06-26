@@ -16,10 +16,12 @@ async function generate(){
 	closeTabs();
 
 	await fetchPenguinStats();
-	showmsg("Done!");
+
+	processData();
 
 	showitems();
 
+	showmsg("Done!");
 	btGen.disabled = false;
 	openDefaultTab();
 }
